@@ -13,4 +13,3 @@ def get_todo (todo_id) :
         }, status_code=404)
         
     return JSONResponse(get_todo, status_code=200)
-
