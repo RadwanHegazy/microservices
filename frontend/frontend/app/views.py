@@ -49,6 +49,8 @@ class UpdateTodo(TemplateView) :
             url=GATEWAY_URL + f"/todo/v1/get/{todo_id}/"
         )
 
+        print(res.json())
+
         if res.status_code == 404 :
             raise Http404(request)
         

@@ -2,10 +2,13 @@ import asyncio
 import tornado
 import json
 
-from db import todo
+from db import db, TodoTable
 
 class UpdateTodo(tornado.web.RequestHandler):
-    def put(self, todo_id) : 
+    def put(self, todo_id) :
+        db.create_table(TodoTable)
+        todo = db.manage(TodoTable)
+ 
         self.set_header('Content-Type',"application/json")
 
         get_todo = todo.get(TodoTable_id=todo_id)

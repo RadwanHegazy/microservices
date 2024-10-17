@@ -1,17 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>تعديل</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
+
     
-    <form action="." method="POST">
-        {% csrf_token %}
-        <input type="text" name="text" value="{{todo.text}}" id="">
-        <button type="submit">Done</button>
-    </form>
+    <div class="container min">
+
+        <form class="up" method="POST">
+            {% csrf_token %}
+            <input type="text" name="text" value="{{todo.text}}"">
+            <button type="submit">حفظ</button>
+        </form>
+
+        
+    </div>
     
 </body>
 </html>
