@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="." method="POST">
+        {% csrf_token %}
+        <input type="text" name="text" placeholder="Add Todo">
+        <button type="submit">Add todo</button>
+    </form>
+    
+    <ul>
+        {% for todo in todos %}
+            <li>
+                <a href="{% url 'delete_todo' todo.TodoTable_id %}">delete</a>
+                <b>{{todo.text}}</b>
+                <a href="{% url 'update_todo' todo.TodoTable_id %}">Update</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
