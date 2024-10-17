@@ -1,26 +1,35 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>الرئيسية</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
 
-    <form action="." method="POST">
-        {% csrf_token %}
-        <input type="text" name="text" placeholder="Add Todo">
-        <button type="submit">Add todo</button>
-    </form>
     
-    <ul>
+    <div class="container">
+
+        <form class="up" method="POST">
+            {% csrf_token %}
+            <input type="text" name="text" placeholder="أكتب المهمة هنا">
+            <button type="submit">حفظ</button>
+        </form>
+
         {% for todo in todos %}
-            <li>
-                <a href="{% url 'delete_todo' todo.TodoTable_id %}">delete</a>
-                <b>{{todo.text}}</b>
-                <a href="{% url 'update_todo' todo.TodoTable_id %}">Update</a>
-            </li>
+            <div class="todo">
+                <div class="options">
+                    <a href="{% url 'update_todo' todo.TodoTable_id %}">تعديل</a>
+                    |
+                    <a href="{% url 'delete_todo' todo.TodoTable_id %}">حذف</a>
+                </div>
+                <h1>{{todo.text}}</h1>
+            </div>
         {% endfor %}
-    </ul>
+        
+    </div>
+    
 </body>
 </html>

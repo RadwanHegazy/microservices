@@ -1,0 +1,98 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* --var-bg-color-: */
+    --var-font:"Cairo",sans-serif;
+}
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(185.53deg, #364DE3 26.16%, #8949E3 59.48%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container {
+    width: 650px;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(248, 248, 248, 0.185);
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    /* min-height: 450px; */
+    height: 450px;
+    padding-top: 50px;
+}
+
+.container.min {
+    height: auto;
+    padding: 2rem 1.4rem;
+}
+
+.container .up {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 15px;
+}
+
+.container .up input {
+    width: 300px;
+    background-color: #ffffff50;
+    padding: 6px 12px;
+    border: none;
+    outline: none;
+    color: #fff;
+    direction: rtl;
+    height: 60px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.container .up button {
+    width: 90px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #6F28D1;
+    cursor: pointer;
+}
+
+
+.todo {
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding:2rem;
+    background-color: #ffffff30;
+    border-radius: 12px;
+    color: #fff;
+    font-family: sans-serif;
+    border: 1px solid #ccc;
+}
+
+.todo .options {
+    position: absolute;
+    top: 15px ;
+    right: 15px;
+}
+
+.todo .options a:last-child {
+    color: crimson;
+}

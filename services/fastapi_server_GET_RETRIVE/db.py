@@ -19,6 +19,3 @@ db = db.connect(
 class TodoTable :
     text = Fields.String(max_len=300, null=False)
 
-db.create_table(TodoTable)
-
-todo = db.manage(TodoTable)
